@@ -1,11 +1,11 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
   const firstChar = word[0].toUpperCase();
-const remaining = word.slice(1, word.length);
-return firstChar + remaining;
-};
-var result = capitalize("hello");
-console.log(result);
+  const remaining = word.slice(1, word.length);
+  return firstChar + remaining;
+}
+var result1 = capitalize("hello");
+console.log(result1);
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
@@ -13,10 +13,9 @@ function generateInitials(firstName, lastName) {
   const firstCharName = firstName[0].toUpperCase();
   const firstCharLastName = lastName[0].toUpperCase();
   return firstCharName +"." + firstCharLastName + ".";
-  };
-  
-  var result = generateInitials("Frederic", "Bonneville");
-  console.log(result);
+  }
+  var result2 = generateInitials("Frederic", "Bonneville");
+  console.log(result2);
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
