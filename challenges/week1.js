@@ -1,13 +1,22 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
-}
+  const firstChar = word[0].toUpperCase();
+const remaining = word.slice(1, word.length);
+return firstChar + remaining;
+};
+var result = capitalize("hello");
+console.log(result);
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
-}
+  const firstCharName = firstName[0].toUpperCase();
+  const firstCharLastName = lastName[0].toUpperCase();
+  return firstCharName +"." + firstCharLastName + ".";
+  };
+  
+  var result = generateInitials("Frederic", "Bonneville");
+  console.log(result);
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
