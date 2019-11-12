@@ -1,22 +1,11 @@
-const sandwich = {
-  bread: "Sourdough",
-  fillings: ["brie", "relish", "lettuce"],
-  accompaniment: "crisps"
-};
+
 function getFillings(sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required");
   return sandwich.fillings;
 }
-var result = getFillings(sandwich);
-console.log(result);
 
 
 
-const person = {
-  name: "Mohammed",
-  city: "Manchester",
-  age: 23
-};
 function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
   if (person.city.toLowerCase() ==="Manchester".toLowerCase()) {
@@ -25,10 +14,9 @@ function isFromManchester(person) {
     return false;
   }
 }
-  var result = isFromManchester(person);
-  console.log(result);
 
-const people = 45;
+
+
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
   if (people <=40 ) {
@@ -43,10 +31,8 @@ function getBusNumbers(people) {
     return Math.ceil(people/40);
   }
 }
-  var result = getBusNumbers(people);
-  console.log(result);
+ 
 
-const arr = ["dog", "sheep", "sheep", "chicken"];
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   let sum = 0;
@@ -57,27 +43,17 @@ function countSheep(arr) {
   }
     return sum;
 }
-  var result = countSheep(arr);
-  console.log(result);
 
 
- const per = {
-      name: "Mohammed",
-      age: 23,
-      address: {
-        line1: "1a Pool Road",
-        city: "Manchester",
-        postCode: "M16 8DR"
-      }};
-function hasMPostCode(per) {
-  if (per === undefined) throw new Error("person is required");
-  if (per.address.postCode[0].toLowerCase()==="M".toLowerCase() && per.address.city.toLowerCase() === "Manchester".toLowerCase()) {
+
+function hasMPostCode(person) {
+  if (person === undefined) throw new Error("person is required");
+  if (person.address.postCode[0].toLowerCase()==="M".toLowerCase() && person.address.city.toLowerCase() === "Manchester".toLowerCase()) {
     return true;
   }
 return false;
 }
-var result = hasMPostCode(per);
-console.log(result);
+
 
 module.exports = {
   getFillings,
