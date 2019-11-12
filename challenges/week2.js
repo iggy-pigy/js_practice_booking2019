@@ -60,10 +60,24 @@ function countSheep(arr) {
   var result = countSheep(arr);
   console.log(result);
 
+
+ const person = {
+      name: "Mohammed",
+      age: 23,
+      address: {
+        line1: "1a Pool Road",
+        city: "Manchester",
+        postCode: "M16 8DR"
+      }};
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+  if (person. address.postCode[0].toLowerCase()==="M".toLowerCase()) {
+    return true;
+  }
+return false;
 }
+var result = hasMPostCode(person);
+console.log(result);
 
 module.exports = {
   getFillings,
