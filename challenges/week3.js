@@ -3,8 +3,8 @@ function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   return nums*nums;
   }
-var newArray=nums.map(getSquares);
-console.log(newArray)
+const newArray=nums.map(getSquares);  
+console.log(newArray);
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
