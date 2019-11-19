@@ -2,12 +2,11 @@ function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   var newArray = [];
   for (let n of nums){
-   var numSquares = n * n;
-   newArray.push(numSquares);
+   var numSquare = n * n;
+   newArray.push(numSquare);
   }
   return newArray;
 }
-getSquares([2, 4, 6]);
 
 
 function camelCaseWords(words) {
