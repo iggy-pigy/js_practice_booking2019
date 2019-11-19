@@ -18,8 +18,7 @@ function getTotalSubjects(people) {
   }
 return countSubjects.length;
 }
-var result=getTotalSubjects(people);
-console.log(result);
+
 
 
 function checkIngredients(menu, ingredient) {
