@@ -6,10 +6,20 @@ function getSquares(nums) {
 const newArray=nums.map(getSquares);  
 console.log(newArray)
 
+const words = ["is", "my"];
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Your code here!
+  var firstWord=words[0];
+  var remWords=words.slice(1, words.length);
+  var firstLetters=remWords.map(function (n) {
+  const firstChar=n[0].toUpperCase();
+  const remaining=n.slice(1, n.length);
+  return firstChar + remaining;
+  })
+  const joinLetters=firstLetters.join("");
+   const joinArray=firstWord + joinLetters;
 }
+console.log(joinArray);
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
