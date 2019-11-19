@@ -33,8 +33,7 @@ function checkIngredients(menu, ingredient) {
 return false;
 }
 
-arr1 = [1, 5, 88, 6, 7, 3, 2];
-arr2 = [4, 1, 7, 3, 2];
+
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
@@ -49,8 +48,6 @@ function duplicateNumbers(arr1, arr2) {
   let x = (newArray) => newArray.filter((v,i) => newArray.indexOf(v) === i)
   return x(newArray).sort();
 }
-var result=duplicateNumbers(arr1, arr2);
-console.log(result);
 
 module.exports = {
   getSquares,
