@@ -46,7 +46,8 @@ function duplicateNumbers(arr1, arr2) {
     }
   }
   }
-  return newArray.sort();
+  let x = (newArray) => newArray.filter((v,i) => newArray.indexOf(v) === i)
+  return x(newArray).sort();
 }
 var result=duplicateNumbers(arr1, arr2);
 console.log(result);
