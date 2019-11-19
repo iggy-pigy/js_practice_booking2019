@@ -1,64 +1,67 @@
-const nums = [2, 4, 6];
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  return nums*nums;
+  var newArray = [];
+  for (let n of nums){
+   var numSquares = n * n;
+   newArray.push(numSquares);
   }
-const newArray=nums.map(getSquares);  
-console.log(newArray)
+  return newArray;
+}
+getSquares([2, 4, 6]);
 
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var firstWord=words[0];
-  var remWords=words.slice(1, words.length);
-    var firstLetters=remWords.map(function (n) {
-      const firstChar=n[0].toUpperCase();
-      const remaining=n.slice(1, n.length);
+  var firstWord = words[0];
+  var remWords = words.slice(1, words.length);
+  var firstLetters = remWords.map(function (n) {
+    const firstChar = n[0].toUpperCase();
+    const remaining = n.slice(1, n.length);
     return firstChar + remaining;
-    })
-  const joinLetters=firstLetters.join("");
+  })
+  const joinLetters = firstLetters.join("");
   return firstWord + joinLetters;
 }
 
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  var countSubjects=[];
-  for (let p of people) { 
+  var countSubjects = [];
+  for (let p of people) {
     for (let s of p.subjects) {
-    countSubjects.push(s);
+      countSubjects.push(s);
     }
   }
-return countSubjects.length;
+  return countSubjects.length;
 }
 
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  for (let m of menu) { 
+  for (let m of menu) {
     for (let i of m.ingredients) {
-    if (i === ingredient) {
-      return true;
-    }
+      if (i === ingredient) {
+        return true;
+      }
     }
   }
-return false;
+  return false;
 }
 
 
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  var newArray=[];
+  var newArray = [];
   for (let a of arr1) {
     for (let r of arr2) {
-    if (a===r) {
-      newArray.push(a);
+      if (a === r) {
+        newArray.push(a);
+      }
     }
   }
-  }
-  let x = (newArray) => newArray.filter((v,i) => newArray.indexOf(v) === i)
+  let x = (newArray) => newArray.filter((v, i) => newArray.indexOf(v) === i)
   return x(newArray).sort();
 }
 
