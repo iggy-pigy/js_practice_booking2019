@@ -1,10 +1,10 @@
-const nums = [1, 3, 5];
+const nums = [2, 4, 6];
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   return nums*nums;
   }
 const newArray=nums.map(getSquares);  
-console.log(newArray);
+console.log(newArray)
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
