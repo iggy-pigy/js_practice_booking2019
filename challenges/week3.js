@@ -2,7 +2,7 @@ function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   const squares = nums.map(function (num) {
     return num*num;
-  })
+  });
   return squares;
 }
 

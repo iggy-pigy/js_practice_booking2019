@@ -25,7 +25,7 @@ describe("camelCaseWords", () => {
   });
 });
 
-describe.only("getSquares", () => {
+describe("getSquares", () => {
   test("returns an empty array if empty array passed", () => {
     expect(getSquares([])).toEqual([]);
   });
