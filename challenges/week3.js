@@ -1,18 +1,11 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  /*var newArray = [];
-  for (let n of nums){
-   var numSquare = n * n;
-   newArray.push(numSquare);
-  }
-  return newArray;
-}*/
   const squares = nums.map(function (num) {
     return num*num;
   })
   return squares;
 }
-getSquares([2, 5, 7]);
+
 
 
 function camelCaseWords(words) {
