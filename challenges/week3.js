@@ -1,7 +1,7 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   const squares = nums.map(function (num) {
-    return num*num;
+    return num * num;
   });
   return squares;
 }
@@ -10,9 +10,9 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var firstWord = words[0];
-  var remWords = words.slice(1, words.length);
-  var firstLetters = remWords.map(function (n) {
+  const firstWord = words[0];
+  const remWords = words.slice(1, words.length);
+  const firstLetters = remWords.map(function (n) {
     const firstChar = n[0].toUpperCase();
     const remaining = n.slice(1, n.length);
     return firstChar + remaining;
