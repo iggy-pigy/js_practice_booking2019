@@ -10,12 +10,11 @@ findSmallNums([8, 1, 1.3, 0.9, 0.4, -1]);
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  const namesWithChar=[];
-  for (let name of names) {
+  const namesWithChar=names.filter(function (name) {
     if (name[0].toLowerCase()=== char.toLowerCase()) {
-      namesWithChar.push(name);
+      return name;
     }
-  }
+  })
   return namesWithChar;
 }
 findNamesBeginningWith(["Sally", "Dave", "Susan", "Geoff", "Riley", "Sam"], "g");
