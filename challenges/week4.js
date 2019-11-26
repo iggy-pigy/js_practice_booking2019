@@ -91,8 +91,14 @@ findSentencesContaining([ "You should specify a license for your package so that
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // Your code here
+  const longestSides=[];
+  for (let num of triangles) {
+    const maxNums=Math.max.apply(null, num);
+    longestSides.push(maxNums);
+  }
+  return longestSides;
 }
+
 
 module.exports = {
   findSmallNums,
