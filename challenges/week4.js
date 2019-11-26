@@ -42,8 +42,15 @@ findVerbs([
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  const integers=[];
+  for (let num of nums) {
+    if ((num*10)%10 ===0) {
+      integers.push(num);
+    }
+  }
+  return integers;
 }
+getIntegers([3.5, 2.1]);
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
