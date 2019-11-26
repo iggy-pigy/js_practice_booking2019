@@ -58,7 +58,7 @@ describe("findVerbs", () => {
   });
 });
 
-describe.only("getIntegers", () => {
+describe("getIntegers", () => {
   test("returns an array containing only integers", () => {
     const nums = [1, 3.5, 2.1, 1, 4, 9];
     expect(getIntegers(nums)).toEqual([1, 1, 4, 9]);
@@ -111,7 +111,7 @@ describe("getCities", () => {
   });
 });
 
-describe("getSquareRoots", () => {
+describe.only("getSquareRoots", () => {
   test("gets the square root of each number to 2 decimal places", () => {
     const nums = [36, 77, 12, 355, 92, 5];
     expect(getSquareRoots(nums)).toEqual([6, 8.77, 3.46, 18.84, 9.59, 2.24]);
