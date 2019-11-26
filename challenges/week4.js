@@ -22,22 +22,13 @@ findNamesBeginningWith(["Sally", "Dave", "Susan", "Geoff", "Riley", "Sam"], "g")
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  const findVerb=[];
-  for (let word of words) {
-    if (word.substring(0, 3)==="to ") {
-      findVerb.push(word);
+  const findVerb=words.filter(function(word) {
+    if (word.includes("to ")) {
+      return word;
     }
-  }
+  });
   return findVerb;
 }
-findVerbs([
-      "to eat",
-      "tower",
-      "monitor",
-      "to sneak",
-      "to squeak",
-      "cheesemonger"
-    ]);
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
