@@ -43,15 +43,24 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  const userCity=[];
-  for (let user of users) {
+  const userCity=users.map(function (user) {
     var userData=user.data;
       var usersCityInfo=userData.city;
       var usersCity=usersCityInfo.displayName;
-      userCity.push(usersCity);
-  }
+      return usersCity;
+  });
   return userCity;
 }
+getCities([
+  {
+    id: 12,
+    data: {
+      city: {
+        id: 1,
+        displayName: "MCR"
+      }
+    }
+  }]);
 
 
 function getSquareRoots(nums) {
