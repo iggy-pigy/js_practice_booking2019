@@ -51,16 +51,7 @@ function getCities(users) {
   });
   return userCity;
 }
-getCities([
-  {
-    id: 12,
-    data: {
-      city: {
-        id: 1,
-        displayName: "MCR"
-      }
-    }
-  }]);
+
 
 
 function getSquareRoots(nums) {
