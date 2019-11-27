@@ -63,7 +63,7 @@ function getSquareRoots(nums) {
   });
   return roots;
 }
-  getSquareRoots([36, 77, 12, 355, 92, 5]);
+  
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
@@ -79,11 +79,10 @@ function findSentencesContaining(sentences, str) {
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  const longestSides=[];
-  for (let num of triangles) {
+  const longestSides=triangles.map(function (num) {
     const maxNums=Math.max.apply(null, num);
-    longestSides.push(maxNums);
-  }
+    return maxNums;
+  });
   return longestSides;
 }
 
