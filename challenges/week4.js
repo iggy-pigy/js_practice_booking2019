@@ -68,16 +68,14 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  const sentencesContaining=[];
-  for (let sentence of sentences) {
+  const sentencesContaining=sentences.filter(function(sentence) {
     if (sentence.toLowerCase().includes(str.toLowerCase())) {
-    sentencesContaining.push(sentence);
+    return sentence;
     }
-  }
+  });
   return sentencesContaining;
 }
-findSentencesContaining([ "You should specify a license for your package so that people know how they are permitted to use it",
-    "The main field is a module ID that is the primary entry point to your program"], "main");
+
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
