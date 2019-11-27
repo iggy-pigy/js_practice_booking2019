@@ -32,15 +32,14 @@ function findVerbs(words) {
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  const integers=[];
-  for (let num of nums) {
+  const integers=nums.filter(function (num) {
     if ((num*10)%10 ===0) {
-      integers.push(num);
+      return num;
     }
-  }
+  });
   return integers;
 }
-getIntegers([3.5, 2.1]);
+
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
