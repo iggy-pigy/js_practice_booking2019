@@ -11,7 +11,11 @@ const count1sand0s = str => {
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  n = n.toString();
+  return n
+    .split("")
+    .reverse()
+    .join("");
 };
 
 const sumArrays = arrs => {
@@ -33,7 +37,6 @@ const arrShift = arr => {
     return arr;
   }
 };
-arrShift([1, 2, 3]);
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
