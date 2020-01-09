@@ -28,7 +28,7 @@ describe("findNextNumber", () => {
   });
 });
 
-describe("count1sand0s", () => {
+describe.only("count1sand0s", () => {
   test("returns an object with the count of 1s and 0s in a string", () => {
     expect(count1sand0s("11000")).toEqual({
       1: 2,
@@ -139,7 +139,7 @@ describe("findNeedle", () => {
   });
 });
 
-describe.only("getWordFrequencies", () => {
+describe("getWordFrequencies", () => {
   test("returns the frequencies of each word in a string", () => {
     expect(getWordFrequencies("hello world")).toEqual({
       hello: 1,
