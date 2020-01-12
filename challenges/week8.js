@@ -1,16 +1,17 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
-  for (let num of nums) {
-    if (num === n) {
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] === n) {
       return nums[nums.indexOf(n) + 1];
     }
   }
-  return nums;
+  return null;
 };
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
+  //Where to put Number() function?
   return str.split("").reduce((total, number) => {
     total[number] ? total[number]++ : (total[number] = 1);
     return total;
@@ -51,7 +52,17 @@ const arrShift = arr => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
+  const valueFound = false;
+  for (let key in haystack) {
+    if (haystack[key] === searchTerm) {
+      return true;
+    } else if (haystack[key].includes(searchTerm)) {
+      return true;
+    } else {
+      return valueFound;
+    }
+  }
+  return valueFound;
 };
 
 const getWordFrequencies = str => {
