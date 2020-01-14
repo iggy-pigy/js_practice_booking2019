@@ -15,6 +15,14 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  const dna = "ACTG";
+  const string = str.toLowerCase();
+  const stringToArray = Array.from(string);
+  const result = stringToArray.filter(n => dna.toLowerCase().includes(n));
+  if (str.length === result.length) {
+    return true;
+  }
+  return false;
 };
 
 /**
