@@ -32,6 +32,22 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  const stringToArray = Array.from(str);
+  const result = [];
+  for (let n of stringToArray) {
+    if (n === "t") {
+      result.push("a");
+    } else if (n === "a") {
+      result.push("t");
+    } else if (n === "c") {
+      result.push("g");
+    } else if (n === "g") {
+      result.push("c");
+    } else {
+      return false;
+    }
+  }
+  return result.join("").toString();
 };
 
 /**
