@@ -78,7 +78,7 @@ describe("isValidDNA", () => {
 });
 
 describe("getComplementaryDNA", () => {
-  test("it returns false if string is empty", () => {
+  test("it returns false if a string is empty", () => {
     const result = getComplementaryDNA("");
     const expected = false;
     expect(result).toBe(expected);
@@ -87,6 +87,12 @@ describe("getComplementaryDNA", () => {
   test("it returns false if string received is not a valid DNA string", () => {
     const result = getComplementaryDNA("AZTCG");
     const expected = false;
+    expect(result).toBe(expected);
+  });
+
+  test("it returns complementary string if string received is a valid DNA string", () => {
+    const result = getComplementaryDNA("TGCAAG");
+    const expected = true;
     expect(result).toBe(expected);
   });
 });

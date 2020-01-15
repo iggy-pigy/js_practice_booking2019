@@ -43,17 +43,17 @@ const getComplementaryDNA = str => {
   if (str.length === 0) {
     return false;
   }
-  const stringToArray = Array.from(str);
+  const stringToArray = Array.from(str.toUpperCase());
   const result = [];
   for (let n of stringToArray) {
-    if (n === "t") {
-      result.push("a");
-    } else if (n === "a") {
-      result.push("t");
-    } else if (n === "c") {
-      result.push("g");
-    } else if (n === "g") {
-      result.push("c");
+    if (n === "T") {
+      result.push("A");
+    } else if (n === "A") {
+      result.push("T");
+    } else if (n === "C") {
+      result.push("G");
+    } else if (n === "G") {
+      result.push("G");
     } else {
       return false;
     }
