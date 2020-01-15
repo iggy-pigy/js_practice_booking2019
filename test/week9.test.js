@@ -37,7 +37,7 @@ describe("sumMultiples", () => {
 });
 
 describe("isValidDNA", () => {
-  /*test("it throws an error if not passes a string", () => {
+  test("it throws an error if not passes a string", () => {
     expect(() => {
       isValidDNA();
     }).toThrow("str is required");
@@ -49,7 +49,7 @@ describe("isValidDNA", () => {
     expect(() => {
       isValidDNA(3);
     }).toThrow("String is required");
-  });*/
+  });
   test("it returns false if string is empty", () => {
     const result = isValidDNA("");
     const expected = false;

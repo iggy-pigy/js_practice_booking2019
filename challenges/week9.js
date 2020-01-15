@@ -19,7 +19,7 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
-  //if (!String.isString(str)) throw new Error("String is required");
+  if (typeof str != "string") throw new Error("String is required");
   if (str.length === 0) {
     return false;
   }
