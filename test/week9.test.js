@@ -105,6 +105,8 @@ describe("getComplementaryDNA", () => {
   });
 });
 
+describe("isItPrime", () => {});
+
 describe("createMatrix", () => {
   test("it throws an error if not passes a number", () => {
     expect(() => {
