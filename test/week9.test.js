@@ -78,6 +78,20 @@ describe("isValidDNA", () => {
 });
 
 describe("getComplementaryDNA", () => {
+  test("it throws an error if not passes a string", () => {
+    expect(() => {
+      getComplementaryDNA();
+    }).toThrow("str is required");
+
+    expect(() => {
+      getComplementaryDNA([]);
+    }).toThrow("String is required");
+
+    expect(() => {
+      getComplementaryDNA(3);
+    }).toThrow("String is required");
+  });
+
   //can output be boolean?
   test("it returns false if a string is empty", () => {
     const result = getComplementaryDNA("");
