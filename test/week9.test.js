@@ -37,9 +37,37 @@ describe("sumMultiples", () => {
 });
 
 describe("createMatrix", () => {
-  it("returns a matrix 1*1 when passed 1", () => {
+  test("it throws an error if not passes a number", () => {
+    expect(() => {
+      createMatrix([], 2);
+    }).toThrow("Number is required");
+
+    expect(() => {
+      createMatrix("error", 3);
+    }).toThrow("Number is required");
+  });
+
+  test("it returns a matrix 1*1 when passed 1", () => {
     const result = createMatrix(1, "foo");
     const expected = [["foo"]];
+    expect(result).toEqual(expected);
+  });
+  test("it returns a matrix 3*3 when passed 3", () => {
+    const result = createMatrix(3, "foo");
+    const expected = [
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"]
+    ];
+    expect(result).toEqual(expected);
+  });
+  test("it returns a matrix 3*3 when passed 3 and fill is number 3", () => {
+    const result = createMatrix(3, 3);
+    const expected = [
+      [3, 3, 3],
+      [3, 3, 3],
+      [3, 3, 3]
+    ];
     expect(result).toEqual(expected);
   });
 });
