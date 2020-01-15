@@ -105,7 +105,28 @@ describe("getComplementaryDNA", () => {
   });
 });
 
-describe("isItPrime", () => {});
+describe("isItPrime", () => {
+  test("it throws an error if not passes a number", () => {
+    expect(() => {
+      isItPrime([]);
+    }).toThrow("Number is required");
+
+    expect(() => {
+      isItPrime(3.3);
+    }).toThrow("Number is required");
+
+    expect(() => {
+      isItPrime("string");
+    }).toThrow("Number is required");
+  });
+
+  test("it returns false if a number can be diveded not only with 1 and itself but with other numbers as well", () => {
+    expect(isItPrime(15)).toBe(false);
+  });
+  test("it returns true if a number can be diveded only with 1 and itself", () => {
+    expect(isItPrime(11)).toBe(true);
+  });
+});
 
 describe("createMatrix", () => {
   test("it throws an error if not passes a number", () => {
