@@ -36,6 +36,47 @@ describe("sumMultiples", () => {
   });
 });
 
+describe("isValidDNA", () => {
+  /* test("it throws an error if not passes a string", () => {
+    expect(() => {
+      isValidDNA();
+    }).toThrow("str is required");
+
+    expect(() => {
+      isValidDNA([]);
+    }).toThrow("String is required");
+
+    expect(() => {
+      isValidDNA(3);
+    }).toThrow("String is required");
+  });*/
+  test("it returns false if string is empty", () => {
+    const result = isValidDNA("");
+    const expected = false;
+    expect(result).toBe(expected);
+  });
+  test("it returns true if string contains characters C, G, T or A only", () => {
+    const result = isValidDNA("GTCAAT");
+    const expected = true;
+    expect(result).toBe(expected);
+  });
+  test("it returns false if string contains other characters than - C, G, T, A", () => {
+    const result = isValidDNA("GTZAWEC6*");
+    const expected = false;
+    expect(result).toBe(expected);
+  });
+  test("it returns true if string contains characters c, g, t or a (lowercase) only", () => {
+    const result = isValidDNA("ctgg");
+    const expected = true;
+    expect(result).toBe(expected);
+  });
+  test("it returns true if string contains characters c, g, t or a (both, lowercase and upercase) only", () => {
+    const result = isValidDNA("cTGg");
+    const expected = true;
+    expect(result).toBe(expected);
+  });
+});
+
 describe("createMatrix", () => {
   test("it throws an error if not passes a number", () => {
     expect(() => {
