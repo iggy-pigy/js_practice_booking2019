@@ -119,7 +119,9 @@ describe("isItPrime", () => {
       isItPrime("string");
     }).toThrow("Number is required");
   });
-
+  test("it returns false if a number is 0", () => {
+    expect(isItPrime(0)).toBe(false);
+  });
   test("it returns false if a number can be diveded not only with 1 and itself but with other numbers as well", () => {
     expect(isItPrime(15)).toBe(false);
   });
