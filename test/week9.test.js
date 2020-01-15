@@ -59,9 +59,33 @@ describe("areWeCovered", () => {
     const staff = [
       { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
       { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
-      { name: "Tom", rota: ["Monday", "Thursday", "Friday"] },
+      { name: "Tom", rota: ["Thursday", "Friday"] },
       { name: "Frida", rota: ["Monday", "Wednesday"] }
     ];
     expect(areWeCovered(staff, "Friday")).toBe(false);
+    expect(areWeCovered(staff, "Saturday")).toBe(false);
+    expect(areWeCovered(staff, "Sunday")).toBe(false);
+    expect(areWeCovered(staff, "Monday")).toBe(false);
+    expect(areWeCovered(staff, "Tuesday")).toBe(false);
+    expect(areWeCovered(staff, "Wednesday")).toBe(false);
+    expect(areWeCovered(staff, "Thursday")).toBe(false);
+  });
+  test("it returns true if there are 3 people who are scheduled to work", () => {
+    const staff = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Tom", rota: ["Monday", "Thursday", "Friday"] },
+      { name: "Frida", rota: ["Monday", "Wednesday"] }
+    ];
+    expect(areWeCovered(staff, "Monday")).toBe(true);
+  });
+  test("it returns true if there are more than 3 people who are scheduled to work", () => {
+    const staff = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Wednesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Tom", rota: ["Monday", "Wednesday", "Thursday", "Friday"] },
+      { name: "Frida", rota: ["Monday", "Wednesday"] }
+    ];
+    expect(areWeCovered(staff, "Wednesday")).toBe(true);
   });
 });
