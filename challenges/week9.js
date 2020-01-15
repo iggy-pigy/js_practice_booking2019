@@ -6,6 +6,7 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
+  if (!Array.isArray(arr)) throw new Error("an Array is required");
   const filteredArr = arr.filter(n => n % 3 === 0 || n % 5 === 0);
   const result = filteredArr.reduce((total, num) => total + num, 0);
   return result;
@@ -109,6 +110,9 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  if (staff.length === 0) {
+    return false;
+  }
   let positiveResult = 0;
   for (let i = 0; i < staff.length; i++) {
     const staFF = staff[i];
