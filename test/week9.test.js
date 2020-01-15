@@ -18,4 +18,7 @@ describe("sumMultiples", () => {
     const expected = 45;
     expect(result).toBe(expected);
   });
+  test("it returns 0 if there are no multiples of 3 or 5", () => {
+    expect(sumMultiples([1, 4.5, 22])).toBe(0);
+  });
 });
