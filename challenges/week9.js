@@ -41,9 +41,7 @@ const isValidDNA = str => {
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
   if (typeof str != "string") throw new Error("String is required");
-  if (str.length === 0) {
-    return false;
-  }
+  if (str.length === 0) throw new Error("Valid DNA string is required");
   const stringToArray = Array.from(str.toUpperCase());
   const result = [];
   for (let n of stringToArray) {
@@ -56,7 +54,7 @@ const getComplementaryDNA = str => {
     } else if (n === "G") {
       result.push("G");
     } else {
-      return false;
+      throw new Error("Valid DNA string is required");
     }
   }
   return result.join("").toString();

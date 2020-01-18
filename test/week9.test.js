@@ -92,18 +92,14 @@ describe("getComplementaryDNA", () => {
     }).toThrow("String is required");
   });
 
-  //can output be boolean?
-  test("it returns false if a string is empty", () => {
-    const result = getComplementaryDNA("");
-    const expected = false;
-    expect(result).toBe(expected);
-  });
+  test("it throws an error if string received is not a valid DNA string", () => {
+    expect(() => {
+      getComplementaryDNA("ATW");
+    }).toThrow("Valid DNA string is required");
 
-  //can output be boolean?
-  test("it returns false if string received is not a valid DNA string", () => {
-    const result = getComplementaryDNA("AZTCG");
-    const expected = false;
-    expect(result).toBe(expected);
+    expect(() => {
+      getComplementaryDNA("");
+    }).toThrow("Valid DNA string is required");
   });
 
   test("it returns complementary string if string received is a valid DNA string", () => {
