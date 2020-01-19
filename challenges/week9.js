@@ -125,15 +125,10 @@ const areWeCovered = (staff, day) => {
     return false;
   }
   let positiveResult = 0;
-  for (let i = 0; i < staff.length; i++) {
-    const staFF = staff[i];
-    for (let person in staFF) {
-      const personWorking = staFF[person];
-      for (let workingDays in personWorking) {
-        if (personWorking[workingDays].includes(day)) {
-          positiveResult += 1;
-        }
-      }
+  for (let person in staff) {
+    const workingDay = staff[person].rota;
+    if (workingDay.includes(day)) {
+      positiveResult += 1;
     }
   }
   if (positiveResult >= 3) {
