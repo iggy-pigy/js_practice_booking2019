@@ -4,6 +4,7 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  if (!Number.isInteger(n)) throw new Error("Number is required");
   return n
     .toString()
     .split("")
