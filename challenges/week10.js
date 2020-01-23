@@ -62,6 +62,10 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+  /*if (Date(date) !== Date("YYYY-MM-DD"))
+    throw new Error(
+      "date must be provided in the format 2019-05-04 (YYYY-MM-DD)"
+    );*/
   const userFound = [];
   for (let i in users) {
     let userScreenTime = users[i].screenTime;
