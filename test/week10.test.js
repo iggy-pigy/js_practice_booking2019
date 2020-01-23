@@ -2,7 +2,8 @@ const {
   sumDigits,
   createRange,
   getScreentimeAlertList,
-  hexToRGB
+  hexToRGB,
+  findWinner
 } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -283,5 +284,16 @@ describe("hexToRGB", () => {
   });*/
   test("it returns hex code transformed into an RGB code", () => {
     expect(hexToRGB("#FA11BC")).toBe("rgb(250,17,188)");
+  });
+});
+
+describe("findWinner", () => {
+  test("it throws error if not passed a board", () => {
+    expect(() => {
+      findWinner("");
+    }).toThrow("board is required");
+    expect(() => {
+      findWinner(679);
+    }).toThrow("board is required");
   });
 });
