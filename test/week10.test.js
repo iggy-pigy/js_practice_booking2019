@@ -22,6 +22,9 @@ describe("createRange", () => {
   test("it returns a range of numbers as an array", () => {
     expect(createRange(2, 15, 3)).toEqual([2, 5, 8, 11, 14, 17]);
   });
+  test("it returns a range of numbers as an array, if step is not provided it is 1 by default", () => {
+    expect(createRange(2, 7)).toEqual([2, 3, 4, 5, 6, 7]);
+  });
 });
 
 describe("getScreenTimeAlertList", () => {
