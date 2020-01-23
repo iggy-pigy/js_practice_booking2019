@@ -94,15 +94,15 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  if (typeof hexStr !== "string") throw new Error("String is required");
+  if (hexStr.length !== 7) throw new Error("string.length ===7");
+  /* if (hexStr[0] !== "#")
+    throw new Error("string should start with character #");
+    */
   let r = 0;
   let g = 0;
   let b = 0;
-
-  if (hexStr.length == 4) {
-    r = "0x" + hexStr[1] + hexStr[1];
-    g = "0x" + hexStr[2] + hexStr[2];
-    b = "0x" + hexStr[3] + hexStr[3];
-  } else if (hexStr.length == 7) {
+  if (hexStr.length == 7) {
     r = "0x" + hexStr[1] + hexStr[2];
     g = "0x" + hexStr[3] + hexStr[4];
     b = "0x" + hexStr[5] + hexStr[6];

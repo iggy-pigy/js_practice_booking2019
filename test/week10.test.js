@@ -1,7 +1,8 @@
 const {
   sumDigits,
   createRange,
-  getScreentimeAlertList
+  getScreentimeAlertList,
+  hexToRGB
 } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -260,5 +261,27 @@ describe("getScreenTimeAlertList", () => {
         "2019-11-11"
       )
     ).toEqual([]);
+  });
+});
+
+describe("hexToRGB", () => {
+  test("it throws error if not passed string", () => {
+    expect(() => {
+      hexToRGB([]);
+    }).toThrow("String is required");
+    expect(() => {
+      hexToRGB(66679);
+    }).toThrow("String is required");
+  });
+  test("it throws error if string is too short or too long", () => {
+    expect(() => {
+      hexToRGB("#12");
+    }).toThrow("string.length ===7");
+  });
+  /*test("it throws error if string doesn't start with character #", () => {
+    expect(hexToRGB("FFA11BC")).toThrow("string should start with character #");
+  });*/
+  test("it returns hex code transformed into an RGB code", () => {
+    expect(hexToRGB("#FA11BC")).toBe("rgb(250,17,188)");
   });
 });
