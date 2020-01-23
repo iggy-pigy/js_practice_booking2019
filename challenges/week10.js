@@ -24,10 +24,10 @@ const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
   if (step === undefined) {
-    return Array.from({ length: end - 1}, (_,  i) => start + (i * 1));
+    return Array.from({ length: end - 1 }, (_, i) => start + i * 1);
+  } else {
+    return Array.from({ length: end / step + 1 }, (_, i) => start + i * step);
   }
-  else {
-    return Array.from({ length: end / step + 1}, (_, i) => start + (i * step));
 };
 
 /**
@@ -62,6 +62,20 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+  const userFound = [];
+  for (let i in users) {
+    let userScreenTime = users[i].screenTime;
+    for (let t in userScreenTime) {
+      if (userScreenTime[t].date === date) {
+        let userUsage = userScreenTime[t].usage;
+        let time = Object.values(userUsage).reduce((a, b) => a + b);
+        if (time > 100) {
+          userFound.push(users[i].username);
+        }
+      }
+    }
+  }
+  return userFound;
 };
 
 /**
