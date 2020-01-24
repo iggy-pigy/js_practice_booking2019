@@ -126,6 +126,52 @@ const hexToRGB = hexStr => {
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
   if (!Array.isArray(board)) throw new Error("board is required");
+
+  let newArray = board.reduce((acc, val) => acc.concat(val), []);
+  let xValues = [];
+  let zerroValues = [];
+  let nullValues = [];
+  const winValues = [
+    [0, 1, 2],
+    [2, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+  let result = "";
+
+  for (var i = 0; i < newArray.length; i++) {
+    if (newArray[i] === "X") {
+      xValues.push(i);
+    } else if (newArray[i] === "0") {
+      zerroValues.push(i);
+    } else {
+      nullValues.push(i);
+    }
+  }
+
+  for (let f of winValues) {
+    if (f.every(n => xValues.includes(n))) {
+      return (result = "X");
+    }
+  }
+
+  for (let f of winValues) {
+    if (f.every(n => zerroValues.includes(n))) {
+      return (result = "O");
+    }
+  }
+
+  for (let f of winValues) {
+    if (f.every(n => nullValues.includes(n))) {
+      return (result = null);
+    }
+  }
+  return result;
 };
 
 module.exports = {
