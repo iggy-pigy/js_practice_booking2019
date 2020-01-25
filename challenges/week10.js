@@ -96,7 +96,8 @@ const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
   if (typeof hexStr !== "string") throw new Error("String is required");
   if (hexStr.length !== 7) throw new Error("string.length ===7");
-  /*if (hexStr[0] != "#") throw new Error("string should start with character #");*/
+  if (hexStr[0] !== "#")
+    throw new Error("string should start with character #");
 
   let r = 0;
   let g = 0;

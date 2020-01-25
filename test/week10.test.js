@@ -279,9 +279,11 @@ describe("hexToRGB", () => {
       hexToRGB("#12");
     }).toThrow("string.length ===7");
   });
-  /* test("it throws error if string doesn't start with character #", () => {
-    expect(hexToRGB("FFA11BC")).toThrow("string should start with character #");
-  });*/
+  test("it throws error if string doesn't start with character #", () => {
+    expect(() => {
+      hexToRGB("FFA11BC");
+    }).toThrow("string should start with character #");
+  });
   test("it returns hex code transformed into an RGB code", () => {
     expect(hexToRGB("#FA11BC")).toBe("rgb(250,17,188)");
   });
