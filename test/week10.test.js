@@ -30,8 +30,8 @@ describe("createRange", () => {
 });
 
 describe("getScreenTimeAlertList", () => {
-  /* test("it throws error if date is not provided in the format YYYY-MM-DD", () => {
-    expect(
+  test("it throws error if date is not provided in the format YYYY-MM-DD", () => {
+    expect(() => {
       getScreentimeAlertList(
         [
           {
@@ -58,9 +58,9 @@ describe("getScreenTimeAlertList", () => {
           }
         ],
         "12-05-2018"
-      )
-    ).toThrow("date must be provided in the format 2019-05-04 (YYYY-MM-DD)");
-  });*/
+      );
+    }).toThrow("date must be provided in the format 2019-05-04 (YYYY-MM-DD)");
+  });
 
   test("it returns an array with username of user who used over 100 minutes of screentime on that date", () => {
     expect(
