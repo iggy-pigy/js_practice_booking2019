@@ -62,7 +62,7 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
-  /*if (Date(date) !== Date("YYYY-MM-DD"))
+  /*if (Date(date) !== Date("2015-03-25"))
     throw new Error(
       "date must be provided in the format 2019-05-04 (YYYY-MM-DD)"
     );*/
@@ -96,9 +96,8 @@ const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
   if (typeof hexStr !== "string") throw new Error("String is required");
   if (hexStr.length !== 7) throw new Error("string.length ===7");
-  /* if (hexStr[0] !== "#")
-    throw new Error("string should start with character #");
-    */
+  /*if (hexStr[0] != "#") throw new Error("string should start with character #");*/
+
   let r = 0;
   let g = 0;
   let b = 0;
@@ -153,23 +152,22 @@ const findWinner = board => {
       nullValues.push(i);
     }
   }
-
-  for (let f of winValues) {
-    if (f.every(n => xValues.includes(n))) {
-      return (result = "X");
+  if (winValues.length >= 3) {
+    for (let f of winValues) {
+      if (f.every(n => xValues.includes(n))) {
+        return (result = "X");
+      }
     }
   }
-
-  for (let f of winValues) {
-    if (f.every(n => zerroValues.includes(n))) {
-      return (result = "O");
+  if (zerroValues.length >= 3) {
+    for (let f of winValues) {
+      if (f.every(n => zerroValues.includes(n))) {
+        return (result = "0");
+      }
     }
   }
-
-  for (let f of winValues) {
-    if (f.every(n => nullValues.includes(n))) {
-      return (result = null);
-    }
+  if (result.length < 1) {
+    return null;
   }
   return result;
 };

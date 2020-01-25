@@ -30,7 +30,7 @@ describe("createRange", () => {
 });
 
 describe("getScreenTimeAlertList", () => {
-  /*test("it throws error if date is not provided in the format YYYY-MM-DD", () => {
+  /* test("it throws error if date is not provided in the format YYYY-MM-DD", () => {
     expect(
       getScreentimeAlertList(
         [
@@ -279,7 +279,7 @@ describe("hexToRGB", () => {
       hexToRGB("#12");
     }).toThrow("string.length ===7");
   });
-  /*test("it throws error if string doesn't start with character #", () => {
+  /* test("it throws error if string doesn't start with character #", () => {
     expect(hexToRGB("FFA11BC")).toThrow("string should start with character #");
   });*/
   test("it returns hex code transformed into an RGB code", () => {
@@ -295,5 +295,32 @@ describe("findWinner", () => {
     expect(() => {
       findWinner(679);
     }).toThrow("board is required");
+  });
+  test("it returns X if the winner is X", () => {
+    expect(
+      findWinner([
+        ["X", "X", "0"],
+        ["0", "X", "0"],
+        ["0", null, "X"]
+      ])
+    ).toBe("X");
+  });
+  test("it returns 0 if the winner is 0", () => {
+    expect(
+      findWinner([
+        ["X", "X", "0"],
+        ["0", "X", "0"],
+        ["0", null, "0"]
+      ])
+    ).toBe("0");
+  });
+  test("it returns null if there is currently no winner", () => {
+    expect(
+      findWinner([
+        ["X", "X", "0"],
+        ["0", null, "0"],
+        ["0", null, "X"]
+      ])
+    ).toBe(null);
   });
 });
